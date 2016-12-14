@@ -35,6 +35,6 @@ class Offsets
 
   def set_offset_d
     @offset_d = @split[3].to_i
-    binding.pry
+    # binding.pry
   end
 end
