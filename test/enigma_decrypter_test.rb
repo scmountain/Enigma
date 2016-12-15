@@ -1,7 +1,7 @@
 require "minitest/autorun"
 require "minitest/pride"
 require "./lib/enigma_decrypter"
-require "./lib/enigma_decrypt_char_map"
+# require "./lib/enigma_decrypt_char_map"
 
 class EnigmaDecrypterTest < MiniTest::Test
 
@@ -76,13 +76,13 @@ class EnigmaDecrypterTest < MiniTest::Test
   def test_can_we_encrypt_a_letter
     @rotation.code([4,1,5,2,1])
     @rotation.offset_1
-    assert_equal "3",@rotation.decrypt("w")
+    assert_equal "3",@rotation.encrypt("w")
   end
 
   def test_can_we_encrypt_a_2nd_letter
     @rotation.code([4,1,5,2,1])
     @rotation.offset_2
-    assert_equal "3",@rotation.decrypt("w")
+    assert_equal "3",@rotation.encrypt("w")
   end
 
 

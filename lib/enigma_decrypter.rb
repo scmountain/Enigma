@@ -1,5 +1,5 @@
 require "./lib/offset"
-require "./lib/enigma_decrypt_char_map"
+require "./lib/enigma_char_map"
 require 'pry'
 class EnigmaDecrypter
 
@@ -52,14 +52,16 @@ class EnigmaDecrypter
     @key_d = offset_4 + math_d
   end
 
-  def decrypt(letter)
-    @start=EnigmaDecryptCharMap.new
-    decrypt_char_map = @start.decrypt_char_map
-    @first_step = decrypt_char_map[letter].to_i + @key_a
+  def encrypt(letter)
+    @start=EnigmaCharMap.new
+    char_map = @start.char_map.reverse_each.to_h
+
+    @first_step = char_map[letter].to_i + @key_a
+    binding.pry
     while @first_step > 39
       @first_step = @first_step - 39
     end
-      @final_step = decrypt_char_map.key(@first_step)
+      @final_step = char_map.key(@first_step)
   end
 
 
