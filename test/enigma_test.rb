@@ -1,22 +1,20 @@
 require 'minitest/autorun'
-require 'pry'
 require 'minitest/pride'
-require './lib/enigma'
 require './lib/offset'
-require './lib/enigma_rotator' #gregs rotator
+require "./lib/enigma_rotator"
+require "./lib/enigma_char_map"
+require "./lib/enigma"
+require 'pry'
 
-# e = Enigma.new
-# output = e.encrypt(my_message)# # encrypted message here
-# output = e.encrypt(my_message, "12345", Date.today)
-# #key and date are optional (gen random key and use today's date)
 
 class EnigmaTest < MiniTest::Test
-
-  def test_encryptor
-    e = Enigma.new
-    my_message = "this is so secret ..end.."
-    output = e.encrypt(my_message)
+  def test_enigma_exists
+    assert_instance_of Enigma, Enigma.new
   end
 
-
+  # def test_import_keys
+  #   test = Enigma.new
+  #   binding.pry
+  #   assert_equal 55, test.offset_1
+  # end
 end

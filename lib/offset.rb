@@ -2,7 +2,8 @@ require 'date'
 class Offsets
   attr_accessor :date, :offset_a, :offset_b, :offset_c, :offset_d, :split
 
-  def initialize(date)
+  def initialize(date = "121516")
+    date = date.to_i
     date = date_format if date.nil?
     @split = offset_square(date)
     @offset_a = @split[0].to_i
@@ -22,5 +23,5 @@ class Offsets
   def offset_split(date)
     date.to_s.split(//).last(4)
   end
-  
+
 end

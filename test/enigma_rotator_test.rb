@@ -52,7 +52,38 @@ class EnigmaRotatorTest < MiniTest::Test
   def test_we_can_get_final_key_a
     @rotation.code([4,7,6,1,9])
     @rotation.math_a
-    # assert_equal 52, @rotation.offset_1
+    # binding.pry
+    assert_equal 55, @rotation.offset_1
   end
+
+  def test_we_can_get_final_key_b
+   @rotation.code([4,7,6,1,9])
+   @rotation.math_b
+   assert_equal 78, @rotation.offset_2
+ end
+
+ def test_we_can_get_final_key_c
+   @rotation.code([4,7,6,1,9])
+   @rotation.math_c
+   assert_equal 66, @rotation.offset_3
+ end
+
+ def test_we_can_get_final_key_d
+   @rotation.code([4,7,6,1,9])
+   @rotation.math_d
+   assert_equal 25, @rotation.offset_4
+ end
+
+ def test_can_we_encrypt_a_letter
+   @rotation.code([4,7,6,1,9])
+   @rotation.offset_1
+   assert_equal ".",@rotation.encrypt("w")
+ end
+
+ def test_can_we_encrypt_a_2nd_letter
+   @rotation.code([4,7,6,1,9])
+   @rotation.offset_2
+   assert_equal ".",@rotation.encrypt("w")
+ end
 
 end

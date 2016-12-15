@@ -1,13 +1,23 @@
-  require './lib/offset'
-  # require './lib/enigma_rotator'
+require "./lib/offset"
+require "minitest/autorun"
+require "minitest/pride"
+require "./lib/enigma_rotator"
+require "./lib/enigma_char_map"
+require 'pry'
 
   class Enigma
-
-    def encrypt(my_message, key, date = nil)
-
-      var = Offsets.new(date)
-      binding.pry
+    def initialize
+      @key_1 = EnigmaRotator.new.offset_1
     end
+
+
+
+    # def import_file
+    #   binding.pry
+    #   input = ReadInFile.new
+    # end
+    # def encrypt(my_message, key, date = nil)
+    # end
 
 
 
