@@ -15,11 +15,12 @@ class Offsets
     Date.today.strftime("%D").delete("/").to_i
   end
 
-  def offset_square(date) #test instance of array
+  def offset_square(date)
     offset_split(date * date)
   end
 
-  def offset_split(date) # test splitting
+  def offset_split(date)
     date.to_s.split(//).last(4)
   end
+  
 end

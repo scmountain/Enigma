@@ -29,11 +29,18 @@ class OffsetTests< MiniTest::Test
   end
 
   def test_offset_d
-    # binding.pry
     assert_equal 6, @numbers.offset_d
   end
 
   def test_date_format
     assert_equal 6, @numbers.date_format.to_s.length
+  end
+
+  def test_square_output
+    assert_instance_of Array, @numbers.offset_square(123456)
+  end
+
+  def test_offset_split
+    assert_equal ["3", "4","5", "6"], @numbers.offset_split(123456)
   end
 end
