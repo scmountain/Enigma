@@ -3,8 +3,9 @@
 
   class Enigma
 
-    def encrypt(my_message)
-      var = Offsets.new
+    def encrypt(my_message, key, date = nil)
+
+      var = Offsets.new(date)
       binding.pry
     end
 
