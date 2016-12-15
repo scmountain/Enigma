@@ -12,9 +12,8 @@ class EnigmaTest < MiniTest::Test
     assert_instance_of Enigma, Enigma.new
   end
 
-  # def test_import_keys
-  #   test = Enigma.new
-  #   binding.pry
-  #   assert_equal 55, test.offset_1
-  # end
+  def test_import_keys
+    test = Enigma.new
+    assert_equal 55, test.offset_1
+  end
 end

@@ -1,14 +1,17 @@
-require "./lib/offset"
 require "minitest/autorun"
 require "minitest/pride"
-require "./lib/enigma_rotator"
 require "./lib/enigma_char_map"
+require "./lib/offset"
 require 'pry'
 
   class Enigma
-    def initialize
-      @key_1 = EnigmaRotator.new.offset_1
+    def inititalize
+      key_1 = EnigmaRotator.new.offset_1
+      key_2 = EnigmaRotator.new.offset_2
+      key_3 = EnigmaRotator.new.offset_3
+      key_4 = EnigmaRotator.new.offset_4
     end
+
 
 
 
